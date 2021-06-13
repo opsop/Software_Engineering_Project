@@ -1,0 +1,206 @@
+{%with messages = get_flashed_messages()%}
+  {%if messages %}
+    <script type="text/javascript">
+      alert("{{messages[-1]}}");
+    </script>
+    {%endif%}
+  {%endwith%}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+
+	<title>로그인</title>
+
+    <style>
+        :root{
+	--body-background-color: #f5f6f7;
+	--font-color: #4e4e4e;
+	--border-gray-color : #dadada;
+	--naver-green-color: #4e4e4e;
+	--naver-green-border-color: #4e4e4e;
+}
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+font-family: 'Nanum Myeongjo', sefif;
+	background:var(--body-background-color);
+}
+
+.main-container{\
+font-family: 'Nanum Myeongjo', sefif;
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin-top: 100px;
+}
+.main-container .main-wrap{
+	width:768px;
+
+}
+.main-container .main-wrap .sel-lang-wrap .lang-select
+{
+	width: 96px;
+	height: 30px;
+	color: var(--font-color);
+	border: solid 1px var(--border-gray-color);
+}
+.main-container .main-wrap .logo-wrap{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.main-container .main-wrap .icon-wrap{
+    padding-top: 0;
+	padding-botttom: 30;
+}
+.main-container .main-wrap .icon-wrap img
+{
+	width: 150px;
+	height: 160px;
+}
+.main-container .main-wrap .logo-wrap img
+{
+	width: 400px;
+	height: 270px;
+}
+
+.main-container .main-wrap header .sel-lang-wrap{
+	display:flex;
+	justify-content:flex-end;
+}
+
+.main-container .main-wrap header .icon-wrap{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-container .main-wrap header .logo-wrap{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-input-section-wrap{
+	padding-top: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-input-wrap{
+font-family: 'Nanum Myeongjo', sefif;
+	width: 465px;
+	height :48px;
+	border: solid 2px var(	--border-gray-color );
+	background: white;
+}
+.password-wrap{
+	margin-top: 13px;
+}
+.login-input-wrap input{
+font-family: 'Nanum Myeongjo', sefif;
+	border: none;
+	width:430px;
+	margin-top: 10px;
+	font-size: 16px;
+	margin-left: 10px;
+	height:30px;
+	padding: 10px;
+}
+.login-button-wrap {
+font-family: 'Nanum Gothic', sefif;
+	padding-top: 13px;
+}
+.login-button-wrap button{
+font-family: 'Nanum Gothic', sefif;
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: var(--naver-green-color);
+	color: white;
+	border: solid 1px var(--naver-green-border-color);
+}
+
+.signin-button {
+font-family: 'Nanum Gothic', sefif;
+	padding-top: 13px;
+}
+.signin-button input{
+font-family: 'Nanum Gothic', sefif;
+	width: 465px;
+	height :48px;
+	font-size: 18px;
+	background: #4DBBFF;
+	color: white;
+	border: solid 1px #4DBBFF;
+}
+
+.bottom{
+font-family: 'Nanum Gothic', sefif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 40px;
+
+}
+.bottom .Sign-up{
+	color:var(--font-color);
+	font-size: 18px;
+	padding-top: 10px;
+
+}
+
+.bottom .Sign-up a:link { color: #616161; text-decoration: none;}
+.bottom .Sign-up a:visited { color: black; text-decoration: none;}
+.bottom .Sign-up a:hover { color: #616161; text-decoration: underline;}
+
+
+    </style>
+</head>
+
+<body>
+<form action = "http://localhost:5000/login" method = "post">
+	<div class="main-container">
+		<div class="main-wrap">
+		<header>
+
+			<div class="icon-wrap" align = "center">
+				<a href="http://localhost:5000/login"><img src="https://user-images.githubusercontent.com/71917474/121674911-a1782e80-caed-11eb-8059-43e4cc208cc7.png"></a>
+			</div>
+
+		</header>
+		<section class="login-input-section-wrap">
+			<div class="login-input-wrap">
+				<input name = "profName" placeholder="ID" type="text" />
+			</div>
+
+			<div class="login-input-wrap password-wrap">
+				<input name = "password" placeholder="Password" type="password" />
+			</div>
+            <br>
+			<div class="signin-button">
+                <input type = "submit" value="로그인" />
+			</div>
+
+		</section>
+		<section class="bottom">
+
+            <p class="Sign-up"><a href="http://127.0.0.1:5000/signup">회원가입 하러가기</a></p>
+		</section>
+
+		</div>
+	</div>
+
+</form>
+</body>
+</html>
